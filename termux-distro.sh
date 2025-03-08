@@ -8,7 +8,7 @@ echo "1) Alpine Linux"
 echo "2) Arch Linux"
 read -p "Which Distro to install: " choice
 
-if [ $choice -eq 2]; then
+if [ $choice -eq 2 ]; then
   ARCH_DIR="arch1"
   ARCH_URL="http://os.archlinuxarm.org/os/ArchLinuxARM-am33x-latest.tar.gz"
   COMMAND_FILE="$PREFIX/bin/start-arch"
@@ -38,6 +38,7 @@ tar -xzf $(basename $ARCH_URL)
 rm $(basename $ARCH_URL)
 
 echo -e "unset LD_PRELOAD\nproot -r ~/$ARCH_DIR -0 -b /proc:/proc -b /sys:/sys" > $COMMAND_FILE
+chmod +x $COMMAND_FILE
 
 clear
 echo "Install Complete! Run the command $DIS to launch $DN"
