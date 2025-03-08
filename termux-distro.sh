@@ -5,7 +5,7 @@
 clear
 echo "Please select the distro you want to install:"
 echo "1) Alpine Linux"
-echo "1) Arch Linux"
+echo "2) Arch Linux"
 read -p "Which Distro to install: " choice
 
 if [ $choice -eq 2]; then
